@@ -7,7 +7,7 @@ defmodule Buzzword.Bingo.Square do
   @course_ref Application.get_env(@app, :course_ref)
 
   @moduledoc """
-  Creates a `square` struct.
+  Creates a `square` struct for the _Multi-Player Bingo_ game.
   Also marks a virgin `square` having a given `phrase` for a given `player`.
   \n##### #{@course_ref}
   """
@@ -25,7 +25,7 @@ defmodule Buzzword.Bingo.Square do
         }
 
   @doc """
-  Creates a square from the given `phrase` and `points`.
+  Creates a `square` from the given `phrase` and `points`.
 
   ## Examples
 
