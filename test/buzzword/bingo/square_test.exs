@@ -66,5 +66,13 @@ defmodule Buzzword.Bingo.SquareTest do
       arthur = Player.new("Arthur", "green_yellow")
       assert ^square = Square.mark(square, 'Bottom Line', arthur)
     end
+
+    test "returns the same struct when marked" do
+      square = Square.new("Bottom Line", 375)
+      arthur = Player.new("Arthur", "green_yellow")
+      arnold = Player.new("Arnold", "light_yellow")
+      square = Square.mark(square, "Bottom Line", arthur)
+      assert ^square = Square.mark(square, "Bottom Line", arnold)
+    end
   end
 end
