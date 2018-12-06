@@ -81,6 +81,18 @@ defmodule Buzzword.Bingo.Square do
       iex> arnold = Player.new("Arnold", "bright_turquoise")
       iex> Square.mark(square, "Best of Breed", arnold)
       %Square{phrase: "Big Picture", points: 225, marked_by: nil}
+
+      iex> alias Buzzword.Bingo.{Player, Square}
+      iex> square = Square.new("Best Of Breed", 525)
+      iex> joe = Player.new("Joe", "light_cyan")
+      iex> jim = Player.new("Jim", "light_yellow")
+      iex> square = Square.mark(square, "Best Of Breed", joe)
+      iex> Square.mark(square, "Best Of Breed", jim)
+      %Square{
+        phrase: "Best Of Breed",
+        points: 525,
+        marked_by: %Player{name: "Joe", color: "light_cyan"}
+      }
   """
   @spec mark(t, String.t(), Player.t()) :: t
   def mark(
