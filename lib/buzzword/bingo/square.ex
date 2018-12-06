@@ -46,7 +46,7 @@ defmodule Buzzword.Bingo.Square do
   def new(_phrase, _points), do: {:error, :invalid_square_args}
 
   @doc """
-  Creates a square from the given `tuple`.
+  Creates a `square` from the given `tuple`.
 
   ## Examples
 
