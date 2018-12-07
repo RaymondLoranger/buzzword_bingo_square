@@ -83,13 +83,13 @@ defmodule Buzzword.Bingo.Square do
       %Square{phrase: "Big Picture", points: 225, marked_by: nil}
 
       iex> alias Buzzword.Bingo.{Player, Square}
-      iex> square = Square.new("Best Of Breed", 525)
+      iex> square = Square.new("Best of Breed", 525)
       iex> joe = Player.new("Joe", "light_cyan")
       iex> jim = Player.new("Jim", "light_yellow")
-      iex> square = Square.mark(square, "Best Of Breed", joe)
-      iex> Square.mark(square, "Best Of Breed", jim)
+      iex> square = Square.mark(square, "Best of Breed", joe)
+      iex> Square.mark(square, "Best of Breed", jim)
       %Square{
-        phrase: "Best Of Breed",
+        phrase: "Best of Breed",
         points: 525,
         marked_by: %Player{name: "Joe", color: "light_cyan"}
       }
