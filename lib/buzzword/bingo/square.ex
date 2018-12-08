@@ -58,7 +58,7 @@ defmodule Buzzword.Bingo.Square do
       iex> Square.new({"Bottom Line", 0})
       {:error, :invalid_square_args}
   """
-  @spec new({String.t(), pos_integer}) :: t | {:error, atom}
+  @spec new({phrase :: String.t(), points :: pos_integer}) :: t | {:error, atom}
   def new({phrase, points} = _tuple), do: new(phrase, points)
 
   @doc """
