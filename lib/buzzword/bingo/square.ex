@@ -15,6 +15,7 @@ defmodule Buzzword.Bingo.Square do
   alias __MODULE__
   alias Buzzword.Bingo.Player
 
+  @derive [Poison.Encoder]
   @enforce_keys [:phrase, :points]
   defstruct [:phrase, :points, :marked_by]
 
