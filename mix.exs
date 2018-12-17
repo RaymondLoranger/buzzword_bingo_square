@@ -24,6 +24,8 @@ defmodule Buzzword.Bingo.Square.MixProject do
       {:mix_tasks,
        github: "RaymondLoranger/mix_tasks", only: :dev, runtime: false},
       {:poison, "~> 3.0"},
+      {:jason, "~> 1.0"},
+      {:persist_config, "~> 0.1"},
       {:buzzword_bingo_player, path: "../buzzword_bingo_player"},
       {:earmark, "~> 1.0", only: :dev},
       {:ex_doc, "~> 0.14", only: :dev, runtime: false},

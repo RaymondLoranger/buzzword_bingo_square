@@ -83,5 +83,14 @@ defmodule Buzzword.Bingo.SquareTest do
       assert Poison.encode!(marked) ==
                ~s<{"points":375,"phrase":"Bottom Line","marked_by":{"name":"Arthur","color":"green_yellow"}}>
     end
+
+    test "can be encoded by Jason" do
+      square = Square.new("Bottom Line", 375)
+      arthur = Player.new("Arthur", "green_yellow")
+      marked = Square.mark(square, "Bottom Line", arthur)
+
+      assert Jason.encode!(marked) ==
+               ~s<{"marked_by":{"color":"green_yellow","name":"Arthur"},"phrase":"Bottom Line","points":375}>
+    end
   end
 end
