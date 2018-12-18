@@ -48,7 +48,7 @@ defmodule Buzzword.Bingo.Square do
   def new(_phrase, _points), do: {:error, :invalid_square_args}
 
   @doc """
-  Creates a `square` from the given `tuple`.
+  Creates a `square` from the given `buzzword`.
 
   ## Examples
 
@@ -61,7 +61,7 @@ defmodule Buzzword.Bingo.Square do
       {:error, :invalid_square_args}
   """
   @spec new({phrase :: String.t(), points :: pos_integer}) :: t | {:error, atom}
-  def new({phrase, points} = _tuple), do: new(phrase, points)
+  def new({phrase, points} = _buzzword), do: new(phrase, points)
 
   @doc """
   Marks a virgin `square` having the given `phrase` for the given `player`.
