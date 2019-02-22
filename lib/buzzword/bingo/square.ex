@@ -23,7 +23,7 @@ defmodule Buzzword.Bingo.Square do
   @type t :: %Square{
           phrase: String.t(),
           points: pos_integer,
-          marked_by: Player.t()
+          marked_by: Player.t() | nil
         }
 
   @doc """
