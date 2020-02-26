@@ -4,7 +4,7 @@ defmodule Buzzword.Bingo.Square.MixProject do
   def project do
     [
       app: :buzzword_bingo_square,
-      version: "0.1.1",
+      version: "0.1.2",
       elixir: "~> 1.7",
       start_permanent: Mix.env() == :prod,
       deps: deps()
@@ -25,7 +25,7 @@ defmodule Buzzword.Bingo.Square.MixProject do
        github: "RaymondLoranger/mix_tasks", only: :dev, runtime: false},
       {:poison, "~> 3.0"},
       {:jason, "~> 1.0"},
-      {:persist_config, "~> 0.1"},
+      {:persist_config, "~> 0.1", runtime: false},
       {:buzzword_bingo_player, path: "../buzzword_bingo_player"},
       {:earmark, "~> 1.0", only: :dev},
       {:ex_doc, "~> 0.14", only: :dev, runtime: false},
