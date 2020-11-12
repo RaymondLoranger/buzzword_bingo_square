@@ -2,14 +2,11 @@
 # │ Based on the course "Multi-Player Bingo" by Mike and Nicole Clark. │
 # └────────────────────────────────────────────────────────────────────┘
 defmodule Buzzword.Bingo.Square do
-  use PersistConfig
-
-  @course_ref get_env(:course_ref)
-
   @moduledoc """
   Creates a `square` struct for the _Multi-Player Bingo_ game.
   Also marks a virgin `square` having a given `phrase` for a given `player`.
-  \n##### #{@course_ref}
+
+  ##### Based on the course [Multi-Player Bingo](https://pragmaticstudio.com/courses/unpacked-bingo) by Mike and Nicole Clark.
   """
 
   alias __MODULE__
