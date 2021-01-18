@@ -17,9 +17,11 @@ defmodule Buzzword.Bingo.Square do
   @enforce_keys [:phrase, :points]
   defstruct [:phrase, :points, :marked_by]
 
+  @type phrase :: String.t()
+  @type points :: pos_integer
   @type t :: %Square{
-          phrase: String.t(),
-          points: pos_integer,
+          phrase: phrase,
+          points: points,
           marked_by: Player.t() | nil
         }
 
@@ -36,7 +38,7 @@ defmodule Buzzword.Bingo.Square do
       iex> Square.new("Bottom Line", 0)
       {:error, :invalid_square_args}
   """
-  @spec new(String.t(), pos_integer) :: t | {:error, atom}
+  @spec new(phrase, points) :: t | {:error, atom}
   def new(phrase, points)
       when is_binary(phrase) and is_integer(points) and points > 0 do
     %Square{phrase: phrase, points: points}
@@ -57,7 +59,7 @@ defmodule Buzzword.Bingo.Square do
       iex> Square.new({"Bottom Line", 0})
       {:error, :invalid_square_args}
   """
-  @spec new({phrase :: String.t(), points :: pos_integer}) :: t | {:error, atom}
+  @spec new({phrase, points}) :: t | {:error, atom}
   def new({phrase, points} = _buzzword), do: new(phrase, points)
 
   @doc """
@@ -93,7 +95,7 @@ defmodule Buzzword.Bingo.Square do
         marked_by: %Player{name: "Joe", color: "light_cyan"}
       }
   """
-  @spec mark(t, String.t(), Player.t()) :: t
+  @spec mark(t, phrase, Player.t()) :: t
   def mark(
         %Square{phrase: phrase, marked_by: nil} = square,
         phrase,
