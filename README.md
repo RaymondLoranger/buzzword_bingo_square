@@ -1,7 +1,6 @@
 # Buzzword Bingo Square
 
-Creates a `square` struct for the _Multi-Player Bingo_ game.
-Also marks a virgin `square` having a given `phrase` for a given `player`.
+A square struct and functions for the _Multi-Player Bingo_ game.
 
 ##### Based on the course [Multi-Player Bingo](https://pragmaticstudio.com/courses/unpacked-bingo) by Mike and Nicole Clark.
 

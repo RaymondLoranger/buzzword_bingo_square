@@ -3,8 +3,7 @@
 # └────────────────────────────────────────────────────────────────────┘
 defmodule Buzzword.Bingo.Square do
   @moduledoc """
-  Creates a `square` struct for the _Multi-Player Bingo_ game.
-  Also marks a virgin `square` having a given `phrase` for a given `player`.
+  A square struct and functions for the _Multi-Player Bingo_ game.
 
   ##### Based on the course [Multi-Player Bingo](https://pragmaticstudio.com/courses/unpacked-bingo) by Mike and Nicole Clark.
   """
@@ -26,7 +25,7 @@ defmodule Buzzword.Bingo.Square do
         }
 
   @doc """
-  Creates a `square` from the given `phrase` and `points`.
+  Creates a square struct from the given `phrase` and `points`.
 
   ## Examples
 
@@ -47,7 +46,7 @@ defmodule Buzzword.Bingo.Square do
   def new(_phrase, _points), do: {:error, :invalid_square_args}
 
   @doc """
-  Creates a `square` from the given `buzzword`.
+  Creates a square struct from the given `buzzword`.
 
   ## Examples
 
@@ -63,7 +62,7 @@ defmodule Buzzword.Bingo.Square do
   def new({phrase, points} = _buzzword), do: new(phrase, points)
 
   @doc """
-  Marks a virgin `square` having the given `phrase` for the given `player`.
+  Marks a virgin `square` having the given `phrase` with the given `player`.
 
   ## Examples
 

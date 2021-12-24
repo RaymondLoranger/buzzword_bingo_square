@@ -6,13 +6,13 @@ defmodule Buzzword.Bingo.SquareTest do
   doctest Square
 
   describe "Square.new/2" do
-    test "returns a struct" do
+    test "returns a square struct" do
       assert(
         Square.new("Win-Win", 350) == %Square{phrase: "Win-Win", points: 350}
       )
     end
 
-    test "returns a struct in a `with` macro" do
+    test "returns a square struct in a `with` macro" do
       assert(
         with %Square{} = square <- Square.new("Going Forward", 500) do
           square
@@ -20,11 +20,11 @@ defmodule Buzzword.Bingo.SquareTest do
       )
     end
 
-    test "returns a tuple" do
+    test "returns an error tuple" do
       assert Square.new('Game Plan', 400) == {:error, :invalid_square_args}
     end
 
-    test "returns a tuple in a `with` macro" do
+    test "returns an error tuple in a `with` macro" do
       assert(
         with %Square{} = square <- Square.new('Game Plan', 400) do
           square
@@ -36,19 +36,19 @@ defmodule Buzzword.Bingo.SquareTest do
   end
 
   describe "Square.new/1" do
-    test "returns a struct" do
+    test "returns a square struct" do
       assert(
         Square.new({"Upsell", 225}) == %Square{phrase: "Upsell", points: 225}
       )
     end
 
-    test "returns a tuple" do
+    test "returns an error tuple" do
       assert Square.new({'Upsell', 225}) == {:error, :invalid_square_args}
     end
   end
 
   describe "Square.mark/3" do
-    test "returns a new struct" do
+    test "returns a new square struct" do
       square = Square.new("Bottom Line", 375)
       arthur = Player.new("Arthur", "green_yellow")
 
@@ -61,13 +61,13 @@ defmodule Buzzword.Bingo.SquareTest do
       )
     end
 
-    test "returns the same struct" do
+    test "returns the same square struct when phrase unmatched" do
       square = Square.new("Bottom Line", 375)
       arthur = Player.new("Arthur", "green_yellow")
       assert ^square = Square.mark(square, 'Bottom Line', arthur)
     end
 
-    test "returns the same struct when marked" do
+    test "returns the same square struct when already marked" do
       square = Square.new("Bottom Line", 375)
       arthur = Player.new("Arthur", "green_yellow")
       arnold = Player.new("Arnold", "light_yellow")
