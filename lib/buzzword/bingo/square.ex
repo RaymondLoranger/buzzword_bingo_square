@@ -17,7 +17,9 @@ defmodule Buzzword.Bingo.Square do
   @enforce_keys [:phrase, :points]
   defstruct [:phrase, :points, :marked_by]
 
+  @typedoc "Square phrase"
   @type phrase :: String.t()
+  @typedoc "Square points"
   @type points :: pos_integer
   @type t :: %Square{
           phrase: phrase,
