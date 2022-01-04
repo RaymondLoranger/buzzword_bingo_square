@@ -5,6 +5,9 @@ defmodule Buzzword.Bingo.Square do
   @moduledoc """
   A square struct and functions for the _Multi-Player Bingo_ game.
 
+  The square struct contains the fields `phrase`, `points` and `marked_by`
+  representing the characteristics of a square in the _Multi-Player Bingo_ game.
+
   ##### Based on the course [Multi-Player Bingo](https://pragmaticstudio.com/courses/unpacked-bingo) by Mike and Nicole Clark.
   """
 
@@ -21,6 +24,7 @@ defmodule Buzzword.Bingo.Square do
   @type phrase :: String.t()
   @typedoc "Square points"
   @type points :: pos_integer
+  @typedoc "A square struct for the Multi-Player Bingo game"
   @type t :: %Square{
           phrase: phrase,
           points: points,
