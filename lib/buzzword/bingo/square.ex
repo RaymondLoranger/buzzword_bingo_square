@@ -10,6 +10,7 @@ defmodule Buzzword.Bingo.Square do
 
   alias __MODULE__
   alias Buzzword.Bingo.Player
+  alias Buzzword.Cache
 
   @derive [Poison.Encoder]
   @derive Jason.Encoder
@@ -58,7 +59,7 @@ defmodule Buzzword.Bingo.Square do
       iex> Square.new({"Bottom Line", 0})
       {:error, :invalid_square_args}
   """
-  @spec new({phrase, points}) :: t | {:error, atom}
+  @spec new(Cache.buzzword()) :: t | {:error, atom}
   def new({phrase, points} = _buzzword), do: new(phrase, points)
 
   @doc """

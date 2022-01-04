@@ -4,7 +4,7 @@ defmodule Buzzword.Bingo.Square.MixProject do
   def project do
     [
       app: :buzzword_bingo_square,
-      version: "0.1.11",
+      version: "0.1.12",
       elixir: "~> 1.11",
       start_permanent: Mix.env() == :prod,
       deps: deps()
@@ -22,6 +22,7 @@ defmodule Buzzword.Bingo.Square.MixProject do
   defp deps do
     [
       {:buzzword_bingo_player, github: "RaymondLoranger/buzzword_bingo_player"},
+      {:buzzword_cache, github: "RaymondLoranger/buzzword_cache"},
       {:dialyxir, "~> 1.0", only: :dev, runtime: false},
       {:ex_doc, "~> 0.22", only: :dev, runtime: false},
       {:jason, "~> 1.0"},
