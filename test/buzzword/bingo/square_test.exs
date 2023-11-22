@@ -81,7 +81,7 @@ defmodule Buzzword.Bingo.SquareTest do
       marked = Square.mark(square, "Bottom Line", arthur)
 
       assert Jason.encode!(marked) ==
-               ~s<{"marked_by":{"color":"green_yellow","name":"Arthur"},"phrase":"Bottom Line","points":375}>
+               ~s<{"phrase":"Bottom Line","points":375,"marked_by":{"name":"Arthur","color":"green_yellow"}}>
     end
   end
 end
