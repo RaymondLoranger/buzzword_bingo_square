@@ -21,12 +21,12 @@ defmodule Buzzword.Bingo.SquareTest do
     end
 
     test "returns an error tuple" do
-      assert Square.new('Game Plan', 400) == {:error, :invalid_square_args}
+      assert Square.new(~c"Game Plan", 400) == {:error, :invalid_square_args}
     end
 
     test "returns an error tuple in a `with` macro" do
       assert(
-        with %Square{} = square <- Square.new('Game Plan', 400) do
+        with %Square{} = square <- Square.new(~c"Game Plan", 400) do
           square
         else
           error -> error
@@ -43,7 +43,7 @@ defmodule Buzzword.Bingo.SquareTest do
     end
 
     test "returns an error tuple" do
-      assert Square.new({'Upsell', 225}) == {:error, :invalid_square_args}
+      assert Square.new({~c"Upsell", 225}) == {:error, :invalid_square_args}
     end
   end
 
@@ -64,7 +64,7 @@ defmodule Buzzword.Bingo.SquareTest do
     test "returns the same square struct when phrase unmatched" do
       square = Square.new("Bottom Line", 375)
       arthur = Player.new("Arthur", "green_yellow")
-      assert ^square = Square.mark(square, 'Bottom Line', arthur)
+      assert ^square = Square.mark(square, ~c"Bottom Line", arthur)
     end
 
     test "returns the same square struct when already marked" do
@@ -73,15 +73,6 @@ defmodule Buzzword.Bingo.SquareTest do
       arnold = Player.new("Arnold", "light_yellow")
       square = Square.mark(square, "Bottom Line", arthur)
       assert ^square = Square.mark(square, "Bottom Line", arnold)
-    end
-
-    test "can be encoded by Poison" do
-      square = Square.new("Bottom Line", 375)
-      arthur = Player.new("Arthur", "green_yellow")
-      marked = Square.mark(square, "Bottom Line", arthur)
-
-      assert Poison.encode!(marked) ==
-               ~s<{"points":375,"phrase":"Bottom Line","marked_by":{"name":"Arthur","color":"green_yellow"}}>
     end
 
     test "can be encoded by Jason" do
