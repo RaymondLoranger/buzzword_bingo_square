@@ -75,12 +75,12 @@ defmodule Buzzword.Bingo.SquareTest do
       assert ^square = Square.mark(square, "Bottom Line", arnold)
     end
 
-    test "can be encoded by Jason" do
+    test "can be encoded by JSON" do
       square = Square.new("Bottom Line", 375)
       arthur = Player.new("Arthur", "green_yellow")
       marked = Square.mark(square, "Bottom Line", arthur)
 
-      assert Jason.encode!(marked) ==
+      assert JSON.encode!(marked) ==
                ~s<{"phrase":"Bottom Line","points":375,"marked_by":{"name":"Arthur","color":"green_yellow"}}>
     end
   end

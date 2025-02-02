@@ -6,8 +6,8 @@ defmodule Buzzword.Bingo.Square do
   A square struct and functions for the _Multi-Player Buzzword Bingo_ game.
 
   The square struct contains the fields `phrase`, `points` and `marked_by`
-  representing the characteristics of a square in the _Multi-Player Buzzword
-  Bingo_ game.
+  representing the properties of a square in the _Multi-Player Buzzword Bingo_
+  game.
 
   ##### Based on the course [Multi-Player Bingo](https://pragmaticstudio.com/courses/unpacked-bingo) by Mike and Nicole Clark.
   """
@@ -16,7 +16,7 @@ defmodule Buzzword.Bingo.Square do
   alias Buzzword.Bingo.Player
   alias Buzzword.Cache
 
-  @derive Jason.Encoder
+  @derive JSON.Encoder
   @enforce_keys [:phrase, :points]
   defstruct [:phrase, :points, :marked_by]
 
