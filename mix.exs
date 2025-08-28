@@ -4,7 +4,7 @@ defmodule Buzzword.Bingo.Square.MixProject do
   def project do
     [
       app: :buzzword_bingo_square,
-      version: "0.1.37",
+      version: "0.1.38",
       elixir: "~> 1.11",
       start_permanent: Mix.env() == :prod,
       name: "Buzzword Bingo Square",

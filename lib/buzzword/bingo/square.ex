@@ -5,7 +5,12 @@ defmodule Buzzword.Bingo.Square do
   @moduledoc """
   A square struct and functions for the _Multi-Player Buzzword Bingo_ game.
 
-  The square struct contains the fields `phrase`, `points` and `marked_by`
+  The square struct contains the fields:
+
+    - `phrase`
+    - `points`
+    - `marked_by`
+
   representing the properties of a square in the _Multi-Player Buzzword Bingo_
   game.
 
