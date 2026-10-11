@@ -23,16 +23,6 @@ defmodule Buzzword.Bingo.SquareTest do
     test "returns an error tuple" do
       assert Square.new(~c"Game Plan", 400) == {:error, :invalid_square_args}
     end
-
-    test "returns an error tuple in a `with` macro" do
-      assert(
-        with %Square{} = square <- Square.new(~c"Game Plan", 400) do
-          square
-        else
-          error -> error
-        end == {:error, :invalid_square_args}
-      )
-    end
   end
 
   describe "Square.new/1" do
